@@ -27,9 +27,10 @@ import path from 'path';
 //**Create a stream to html */
 
 const server1 = createServer((req, res) =>{
-    if(req.url === '/'){
+    if(req.url === '/html'){
         res.writeHead(200, {'Content-type': 'text/html'});
-        fs.ReadStream(path.resolve('home/index.html')).pipe(res);
+        fs.ReadStream(path.resolve('home/index.html')).pipe(res); 
+        console.log('Hello Armenia!!!');
 
     }else if(req.url === '/style.css'){
         res.writeHead(200, {'Content-type': 'text/css'});
